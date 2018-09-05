@@ -9,6 +9,16 @@ class IncomesController < ApplicationController
   end
 
   def create
+    @income = Income.new(income_params)
+    if @income.save
+      flash[:notice] = "New income added"
+      redirect_to root_path
+    end
   end
+
+  private
+    def income_params
+      params.require(:income).permit(:entry_date, :description, :inflow)
+    end
 
 end
