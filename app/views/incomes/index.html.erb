@@ -1,0 +1,13 @@
+<div class="form-wrapper">
+    <%= render "new" %>
+</div>
+
+<div class="budget-table">
+    <h5>INCOME</h5>
+    <ul>
+      <% @incomes.each do |income| %>
+         <hr />
+        <li><%= income.entry_date %> - <%= income.description %> - <%= number_to_currency(income.inflow) %></li>
+      <% end %>
+    </ul>
+</div>

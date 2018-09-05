@@ -1,0 +1,86 @@
+#budget-page{
+  grid-column: 3 / 22;
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: 3rem 15rem auto;
+}
+
+#top-banner{
+  grid-row: 1 / 2;
+  text-align: center;
+  background-color: #7D4F50;
+  color: #F9EAE1;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: .8rem;
+}
+
+#summary{
+  grid-row: 2 / 3;
+  background-color: #EFEFEF;
+  border-bottom: 1px solid black;
+}
+
+#budget-details{
+  grid-row: 3 / -1;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+#budget-incomes{
+  grid-column: 1 / 6;
+  display: grid;
+  grid-template-rows: 5rem auto;
+  padding: .5rem;
+}
+
+#budget-expenses{
+  grid-column: 6 / -1;
+  display: grid;
+  grid-template-rows: 5rem auto;
+  padding: .5rem;
+}
+
+.form-wrapper{
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+.form-wrapper button{
+  border: none;
+  color: blue;
+  font-weight: bold;
+}
+
+.budget-table{
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
+  margin-top: 2rem;
+  border-top: .5px solid #DDD;
+}
+
+.form-input{
+  display: inline;
+  border-radius: .2rem;
+  border: none;
+  overflow: hidden;
+}
+
+.form-input:focus{
+    outline: none;
+    border-bottom: 2px solid #DDD;
+}
+
+.date-input,
+.desc-input{
+  width: 7rem;
+}
+
+.amount-input{
+  width: 5rem;
+}
+
+
+
+
+

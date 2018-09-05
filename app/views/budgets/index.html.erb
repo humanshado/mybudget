@@ -1,0 +1,15 @@
+<div id="budget-page">
+         <h3 id="top-banner">Track Your Budget</h3>
+
+          <div id="summary"></div>
+
+    <div id="budget-details">
+        <div id="budget-incomes">
+            <%= IncomesController.render :index, assigns: {incomes: Income.all} %>
+        </div>
+        <div id="budget-expenses">
+             <%= ExpensesController.render :index, assigns: {expenses: Expense.all} %>
+        </div>
+    </div>
+
+</div>
