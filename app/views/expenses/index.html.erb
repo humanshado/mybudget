@@ -4,10 +4,18 @@
 
 <div class="budget-table">
     <h5>EXPENSE</h5>
-    <ul>
-      <% @expenses.each do |expense| %>
-        <hr />
-        <li><%= expense.entry_date %> - <%= expense.description %> - <%= number_to_currency(expense.outflow) %></li>
-      <% end %>
-    </ul>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+        <% @expenses.each do |expense| %>
+            <tr>
+                <td><%= expense.entry_date %></td>
+                <td><%= expense.description %></td>
+                <td><%= number_to_currency(expense.outflow) %></td>
+            </tr>
+        <% end %>
+    </table>
   </div>
