@@ -16,3 +16,35 @@
     grid-template-columns: repeat(24, 1fr);
  }
 
+ .form-signup{
+    grid-column: 8 / 13;
+    width: 20rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    border: 2px solid #CCC;
+}
+
+.form-control{
+    width: 100%;
+    height: 1.5rem;
+    margin-top: .5rem;
+    border: none;
+    border-bottom: 1px solid #DDD;
+    overflow: hidden;
+}
+
+.form-control:focus{
+    outline: none;
+    border-bottom: 2px solid #DDD;
+}
+
+.btn-submit{
+    background-color: rgb(167, 236, 167);
+    margin-right: .2rem;
+}
+
+.btn-submit:hover{
+  cursor: pointer;
+}
+
+
