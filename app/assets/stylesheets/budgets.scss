@@ -2,7 +2,7 @@
   grid-column: 5 / 20;
   grid-row: 1 / -1;
   display: grid;
-  grid-template-rows: 3rem 15rem auto;
+  grid-template-rows: 3rem 13rem auto;
 }
 
 #top-banner{
@@ -19,6 +19,40 @@
   grid-row: 2 / 3;
   background-color: #EFEFEF;
   border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 2rem 10rem;
+}
+
+#login-status{
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+  background-color: #CCC;
+}
+
+#budget-summary{
+  grid-row: 2 / -1;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.summary-box{
+  box-sizing: border-box;
+  width: 10rem;
+  height: 2rem;
+  padding: .5rem;
+  background-color: #FFF;
+  font-weight: bold;
+  border: 2px solid #CCC;
+  margin: 0 auto;
+}
+
+.income-figures{
+  color: green;
+}
+
+.expenses-figures{
+  color: red;
 }
 
 #budget-details{

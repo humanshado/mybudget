@@ -1,7 +1,15 @@
 <div id="budget-page">
-         <h3 id="top-banner">Track Your Budget</h3>
+    <h3 id="top-banner">Track Your Budget</h3>
 
-          <div id="summary"></div>
+    <div id="summary">
+        <div id="login-status"></div>
+        <div id="budget-summary">
+            <p>Budget Balance<p>
+            <h2><%= number_to_currency(Income.sum(:inflow) - Expense.sum(:outflow))%></h2>
+            <p class="summary-box income-figures">+ <%= number_to_currency(Income.sum(:inflow))%><p>
+            <p class="summary-box expenses-figures">- <%= number_to_currency(Expense.sum(:outflow))%></p>
+        </div>
+    </div>
 
     <div id="budget-details">
         <div id="budget-incomes">

@@ -3,7 +3,7 @@
 </div>
 
 <div class="budget-table">
-    <h5>EXPENSE</h5>
+    <h5 class="expenses-figures">EXPENSE</h5>
     <table>
         <tr>
             <th>Date</th>
@@ -14,7 +14,7 @@
             <tr>
                 <td><%= expense.entry_date %></td>
                 <td><%= expense.description %></td>
-                <td><%= number_to_currency(expense.outflow) %></td>
+                <td class="expenses-figures">- <%= number_to_currency(expense.outflow) %></td>
             </tr>
         <% end %>
     </table>
