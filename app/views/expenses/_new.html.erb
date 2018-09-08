@@ -1,4 +1,16 @@
 <%= form_for([@user, @user.expenses.build]) do |f| %>
+
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <p><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</p>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= f.date_field :entry_date, placeholder: 'date', class: 'date-input form-input' %>
   <%= f.text_field :description, placeholder: 'description', class: 'desc-input form-input' %>
   <%= f.number_field :outflow, :step => 0.01, placeholder: 'enter amount', class: 'amount-input form-input' %>

@@ -1,18 +1,20 @@
 class ExpensesController < ApplicationController
 
   def index
-    @expenses = Expense.all
+    @expenses = Expense.where(user_id => current_user.id)
   end
 
   def new
-    @expense = Expense.new
+    @user = User.find(params[:user_id])
+    @expense = @user.expenses.new
   end
 
   def create
-    @expense = Expense.new(expense_params)
+    @user = User.find(params[:user_id])
+    @expense = @user.expenses.new(expense_params)
     if @expense.save
       flash[:notice] = "New expense added"
-      redirect_to user_path(current_user)
+      redirect_to user_path(@user)
     end
   end
 

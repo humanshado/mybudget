@@ -1,18 +1,20 @@
 class IncomesController < ApplicationController
 
   def index
-    @incomes = Income.all
+    @incomes = Income.where(user_id => current_user.id)
   end
 
   def new
-    @income = Income.new
+    @user = User.find(params[:user_id])
+    @income = @user.incomes.new
   end
 
   def create
-    @income = Income.new(income_params)
+    @user = User.find(params[:user_id])
+    @income = @user.incomes.new(income_params)
     if @income.save
       flash[:notice] = "New income added"
-      redirect_to user_path(current_user)
+      redirect_to user_path(@user)
     end
   end
 

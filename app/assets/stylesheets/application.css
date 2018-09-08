@@ -151,7 +151,6 @@
 .budget-table{
   grid-column: 1 / -1;
   grid-row: 2 / -1;
-  margin-top: 2rem;
   border-top: .5px solid #DDD;
 }
 

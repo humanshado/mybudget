@@ -17,9 +17,9 @@
         </div>
         <div id="budget-summary">
             <p>Budget Balance<p>
-            <h2><%= number_to_currency(Income.sum(:inflow) - Expense.sum(:outflow))%></h2>
-            <p class="summary-box income-figures">+ <%= number_to_currency(Income.sum(:inflow))%><p>
-            <p class="summary-box expenses-figures">- <%= number_to_currency(Expense.sum(:outflow))%></p>
+            <h2><%= number_to_currency(current_user.incomes.sum(:inflow) - current_user.expenses.sum(:outflow))%></h2>
+            <p class="summary-box income-figures">+ <%= number_to_currency(current_user.incomes.sum(:inflow)) %><p>
+            <p class="summary-box expenses-figures">- <%= number_to_currency(current_user.expenses.sum(:outflow)) %></p>
         </div>
     </div>
 

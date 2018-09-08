@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180907070535) do
 
-  create_table "budgets", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "expenses", force: :cascade do |t|
     t.date "entry_date"
     t.string "description"
