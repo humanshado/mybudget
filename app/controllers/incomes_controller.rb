@@ -12,7 +12,7 @@ class IncomesController < ApplicationController
     @income = Income.new(income_params)
     if @income.save
       flash[:notice] = "New income added"
-      redirect_to root_path
+      redirect_to user_path(current_user)
     end
   end
 

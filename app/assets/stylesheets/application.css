@@ -16,8 +16,18 @@
     grid-template-columns: repeat(24, 1fr);
  }
 
+ .notice{
+     height: 1rem;
+     padding: .5rem;
+     background-color: rgba(103, 241, 103, 0.132);
+     color: #000;
+     font-weight: bold;
+     text-align: center;
+     z-index: 99;
+ }
+
  .form-signup{
-    grid-column: 8 / 13;
+    grid-column: 9 / 14;
     width: 20rem;
     padding: 1rem;
     margin-top: 4rem;

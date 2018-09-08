@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'budgets#index'
+  root 'welcome#index'
 
-  resources :budgets
-  resources :incomes
-  resources :expenses
-  resources :users
+  resources :users do
+      resources :incomes
+      resources :expenses
+  end
+
   resources :sessions
 
   get 'signup' => 'users#new'

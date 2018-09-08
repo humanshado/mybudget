@@ -25,10 +25,10 @@
 
     <div id="budget-details">
         <div id="budget-incomes">
-            <%= IncomesController.render :index, assigns: {incomes: Income.all} %>
+            <%= render 'incomes/index' %>
         </div>
         <div id="budget-expenses">
-             <%= ExpensesController.render :index, assigns: {expenses: Expense.all} %>
+             <%= render 'expenses/index' %>
         </div>
     </div>
 

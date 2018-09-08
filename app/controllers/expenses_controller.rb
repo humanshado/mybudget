@@ -12,7 +12,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     if @expense.save
       flash[:notice] = "New expense added"
-      redirect_to root_path
+      redirect_to user_path(current_user)
     end
   end
 
