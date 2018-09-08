@@ -187,6 +187,11 @@
   width: 5rem;
 }
 
+.error_messages{
+  width: 100%;
+  z-index: 99;
+}
+
 
 
 
