@@ -2,10 +2,15 @@
     <h3 id="top-banner">Track Your Budget</h3>
 
     <div id="summary">
+        <div id="dashboard-link">
+            <% if current_user_admin?%>
+                <%= link_to "Admin Dashboard", dashboard_path %>
+            <% end %>
+        </div>
         <div id="login-status">
             <% if current_user %>
                 <ul>
-                    <li style="color:blue;"><%= current_user.first_name %></li>
+                    <li style="color:blue;"><%= fa_icon "user-circle" %> <strong><%= current_user.first_name %></strong></li>
                     <li><%= link_to "Log out", logout_path, method: "delete" %></li>
                 </ul>
                 <% else %>
@@ -15,8 +20,15 @@
                 </ul>
             <% end %>
         </div>
+        <br />
         <div id="budget-summary">
-            <p>Budget Balance<p>
+            <p>
+                <% if current_user.incomes.sum(:inflow) - current_user.expenses.sum(:outflow) >= 0 %>
+                    <span style="color:green;">Budget Balance <%= fa_icon "check-circle" %></span>
+                <% else %>
+                    <span style="color:red;">Budget Deficit <%= fa_icon "exclamation-circle" %></span>
+                <% end %>
+            <p>
             <h2><%= number_to_currency(current_user.incomes.sum(:inflow) - current_user.expenses.sum(:outflow))%></h2>
             <p class="summary-box income-figures">+ <%= number_to_currency(current_user.incomes.sum(:inflow)) %><p>
             <p class="summary-box expenses-figures">- <%= number_to_currency(current_user.expenses.sum(:outflow)) %></p>

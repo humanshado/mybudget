@@ -11,10 +11,14 @@
             <th>Amount</th>
         </tr>
         <% current_user.expenses.each do |expense| %>
-            <tr>
+            <tr class="table-row">
                 <td><%= expense.entry_date %></td>
                 <td><%= expense.description %></td>
-                <td class="expenses-figures">- <%= number_to_currency(expense.outflow) %></td>
+                <td class="expenses-figures">- <%= number_to_currency(expense.outflow) %>
+                    <%= link_to user_expense_path(@user, expense), method: :delete do %>
+                        <span><%= fa_icon 'trash' %></span>
+                    <% end %>
+                </td>
             </tr>
         <% end %>
     </table>

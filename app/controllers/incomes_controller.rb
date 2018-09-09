@@ -1,4 +1,5 @@
 class IncomesController < ApplicationController
+  before_action :require_signin
 
   def index
     @incomes = Income.where(user_id => current_user.id)
@@ -17,6 +18,15 @@ class IncomesController < ApplicationController
       redirect_to user_path(@user)
     end
   end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @income = @user.incomes.find(params[:id])
+    @income.destroy
+    flash[:notice] = "Income deleted successfully!"
+    redirect_to(@user)
+  end
+
 
   private
     def income_params

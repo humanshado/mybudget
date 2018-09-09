@@ -2,3 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.table-row{
+    span{
+      margin-left: .7rem;
+      display: none;
+    }
+}
+
+.table-row:hover{
+    span{
+        display: inline;
+        cursor: pointer;
+    }
+}

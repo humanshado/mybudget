@@ -11,10 +11,14 @@
             <th>Amount</th>
         </tr>
         <% current_user.incomes.each do |income| %>
-            <tr>
+            <tr class="table-row">
                 <td><%= income.entry_date %></td>
                 <td><%= income.description %></td>
-                <td class="income-figures">+ <%= number_to_currency(income.inflow) %></td>
+                <td class="income-figures">+ <%= number_to_currency(income.inflow) %>
+                    <%= link_to user_income_path(@user, income), method: :delete do %>
+                        <span><%= fa_icon 'trash' %></span>
+                    <% end %>
+                </td>
             </tr>
         <% end %>
     </table>
