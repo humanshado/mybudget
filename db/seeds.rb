@@ -25,8 +25,3 @@ Income.create!([
   {entry_date: "2018-06-28", description: "Monthly Salary", inflow: "7213.44", user_id: 1},
   {entry_date: "2018-04-27", description: "Monthly Salary", inflow: "4890.12", user_id: 3}
 ])
-User.create!([
-  {first_name: "Abu", last_name: "Jega", email: "abusmoh@gmail.com", password_digest: "$2a$10$NfjAWCL5/.k2lNf8CrYS7..yoSJ2qhSXh2BFuxjfm7.xLNhQHrAt.", admin: true},
-  {first_name: "Guest", last_name: "Guest", email: "guest@example.com", password_digest: "$2a$10$beShsq98VOWM4/XysuyCxuPn/6SDhGVt4asRp8Bye2UZ7Nwib/lJ2", admin: false},
-  {first_name: "John", last_name: "Doe", email: "doe@example.com", password_digest: "$2a$10$8Doj9Fcp6JMeOIvt4ST2Xuj5VJzhvshOKkmwweigCUDBrzaXPm6ye", admin: false}
-])
