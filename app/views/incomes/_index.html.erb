@@ -12,7 +12,7 @@
         </tr>
         <% current_user.incomes.each do |income| %>
             <tr class="table-row">
-                <td><%= income.entry_date %></td>
+                <td><%= income.entry_date.to_s(:nlong) %></td>
                 <td><%= income.description %></td>
                 <td class="income-figures">+ <%= number_to_currency(income.inflow) %>
                     <%= link_to user_income_path(@user, income), method: :delete do %>

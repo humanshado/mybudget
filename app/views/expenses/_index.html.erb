@@ -12,7 +12,7 @@
         </tr>
         <% current_user.expenses.each do |expense| %>
             <tr class="table-row">
-                <td><%= expense.entry_date %></td>
+                <td><%= expense.entry_date.to_s(:nlong) %></td>
                 <td><%= expense.description %></td>
                 <td class="expenses-figures">- <%= number_to_currency(expense.outflow) %>
                     <%= link_to user_expense_path(@user, expense), method: :delete do %>
