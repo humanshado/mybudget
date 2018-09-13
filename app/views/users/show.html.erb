@@ -10,7 +10,7 @@
         <div id="login-status">
             <% if current_user %>
                 <ul>
-                    <li style="color:blue;"><%= fa_icon "user-circle" %> <strong><%= current_user.first_name %></strong></li>
+                    <li style="color:blue; font-size:1.2rem;"><%= fa_icon "user-circle" %> <strong><%= current_user.name %></strong></li>
                     <li><%= link_to "Log out", logout_path, method: "delete" %></li>
                 </ul>
                 <% else %>

@@ -1,9 +1,9 @@
 <div id="welcome-page">
-  <h2>Budget Tracker Login</h2>
+  <h2>Budget Tracker</h2>
   <%= fa_stacked_icon "dollar inverse", base: "circle", class: "fa-2x" %>
+  <p>Welcome to the best budget tracking app on Earth! 😃 </p>
+  <button><%= link_to "Try it as a guest", users_path, method: :post %></button>
   <div id="options-wrapper">
-      <span><%= link_to "Existing User", login_path %></span>
-      <span><%= link_to "New User", signup_path %></span>
-      <span><%= link_to "Guest User" %></span>
+      <span>Already signed up? <%= link_to "LogIn", login_path %> or <%= link_to "Register", signup_path %></span>
   <div>
 </div>

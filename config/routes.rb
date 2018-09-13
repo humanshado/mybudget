@@ -8,7 +8,6 @@ Rails.application.routes.draw do
       resources :expenses
   end
 
-  resources :sessions
 
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'

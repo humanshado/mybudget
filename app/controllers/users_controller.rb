@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    @user.email.downcase!
+    @user = params[:user] ? User.new(user_params) : User.new_guest
     if @user.save
+        current_user.move_to(@user) if current_user && current_user.guest?
         session[:user_id] = @user.id
         flash[:notice] = "Account created successfully!"
         redirect_to user_path(@user)
