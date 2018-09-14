@@ -12,7 +12,8 @@
                 <ul>
                     <li style="color:blue; font-size:1.2rem;"><%= fa_icon "user-circle" %> <strong><%= current_user.username %></strong></li>
                     <% if current_user.guest? %>
-                        <%= link_to 'Sign Up', signup_path %>
+                        <%= link_to 'Home', logout_path, method: "delete" %> |
+                        <%= link_to 'SignUp', signup_path %>
                     <% else %>
                         <li><%= link_to "Log out", logout_path, method: "delete" %></li>
                     <% end %>

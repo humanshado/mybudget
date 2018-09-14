@@ -2,15 +2,15 @@
   <h3>Log In</h3>
   <hr /><br />
   <%= form_for(:session, url: login_path) do |f| %>
-      <p class: "form-group">
+      <p>
         <%= f.label :email %>
         <span><%= f.text_field :email, class: "form-control" %></span>
       </p>
-      <p class: "form-group">
+      <p>
         <%= f.label :password %>
         <span><%= f.password_field :password, class: "form-control" %></span>
       </p>
-    <p class: "form-group">
+    <p>
         <%= f.submit "LogIn", class: "btn-submit" %>
         <span><%= link_to "Cancel", root_path %><span>
       </p>

@@ -2,27 +2,27 @@
   <h3>Sign Up</h3>
   <hr /><br />
   <%= form_for(@user) do |f| %>
-      <p class: "form-group">
+      <p>
         <%= f.label :first_name %>
         <span><%= f.text_field :first_name, class: "form-control", autofocus: true%></span>
       </p>
-      <p class: "form-group">
+      <p>
         <%= f.label :last_name %>
         <span><%= f.text_field :last_name, class: "form-control" %></span>
       </p>
-      <p class: "form-group">
+      <p>
         <%= f.label :email %>
         <span><%= f.text_field :email, class: "form-control" %></span>
       </p>
-      <p class: "form-group">
+      <p>
         <%= f.label :password %>
         <span><%= f.password_field :password, class: "form-control" %></span>
       </p>
-      <p class: "form-group">
+      <p>
         <span><%= f.label :password_confirmation, "Confirm Password" %></span>
         <span><%= f.password_field :password_confirmation, class: "form-control" %></span>
       </p><br />
-    <p class: "form-group">
+    <p>
         <%= f.submit "Create Account", class: "btn-submit" %>
         <span><%= link_to "Cancel", root_path %><span>
       </p>
